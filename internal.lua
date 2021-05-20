@@ -238,7 +238,7 @@ function areas:canPlayerAddArea(pos1, pos2, name)
 	-- Check number of areas the user has and make sure it not above the max
 	local count = 0
 	for _, area in pairs(self.areas) do
-		if area.owner == name then
+		if area.owner == name and not (area.parent or area.yl_city or area.yl_plot or area.yl_faction) then
 			count = count + 1
 		end
 	end

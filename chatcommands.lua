@@ -399,7 +399,7 @@ minetest.register_chatcommand("area_info", {
 		-- Area count
 		local area_num = 0
 		for id, area in pairs(areas.areas) do
-			if area.owner == name then
+			if area.owner == name and not (area.parent or area.yl_city or area.yl_plot or area.yl_faction) then
 				area_num = area_num + 1
 			end
 		end
